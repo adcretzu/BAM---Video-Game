@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialize Variables
+            <string>///Initialize Variables
 
 dir = -1;
-movespeed = 3;
+movespeed = 1.5;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
+fearofheights = 0;
+
 // Animation speed
 image_speed = 0.1;
 </string>
@@ -56,14 +58,17 @@ image_speed = 0.1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = dir * movespeed;
+            <string>///Enemy Movement
+hsp = dir * movespeed;
 vsp += grav;
-/// Facing
+
+// Facing
 if(dir &gt; 0) {
-    image_xscale = -1;
-}
-else if( dir &lt; 0) {
     image_xscale = 1;
+}
+
+else if( dir &lt; 0) {
+    image_xscale = -1;
 }
 
 //Horizontal Collision
@@ -84,7 +89,6 @@ x += hsp;
 if(place_meeting(x+hsp,y,obj_wall))
 {
     while(!place_meeting(x+sign(hsp),y,obj_wall))
-// "!" means "not" in game making code
     {
         x += sign(hsp);
     }
@@ -103,9 +107,15 @@ if (place_meeting(x,y+vsp,obj_ground))
         y += sign(vsp);
     }
     vsp =0;
+    //check to whether or not we have a collision with the floor or wall 
+    //if (fearofheights)&amp;&amp; !position_meeting(x+(sprite_width/2)*dir, y+(sprite_height/2)+10, obj_wall,)  
+    //  the first x cordinate is x plus half of the sprite times the direction
+    // the very pixel in the way object moving 
+    // plus eight makes it possible to walk off edges but pushes barrier slightly
+      dir *= 1;
 }
-y += vsp;
 
+y += vsp;
 
 
 
@@ -182,7 +192,7 @@ if (place_meeting(x,y,obj_hero))
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>70,70</point>
+    <point>82,49</point>
+    <point>82,82</point>
   </PhysicsShapePoints>
 </object>

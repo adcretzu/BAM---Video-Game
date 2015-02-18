@@ -5,13 +5,13 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_hero_up</sound>
     <sound>sound\snd_aquire_essence</sound>
     <sound>sound\snd_angry_alien</sound>
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_energy_white</sound>
     <sound>sound\snd_energy</sound>
     <sound>sound\snd_power_up</sound>
+    <sound>sound\snd_appear</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Alien</sprite>
@@ -28,6 +28,7 @@
     <sprite>sprites\spr_hero_2</sprite>
     <sprite>sprites\sprite_hero_2_right</sprite>
     <sprite>sprites\spite_hero_2_left</sprite>
+    <sprite>sprites\spr_energy_2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_ceiling_</background>
@@ -44,6 +45,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_energy_white</object>
     <object>objects\obj_hero_2</object>
+    <object>objects\obj_energy_2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_level1</room>

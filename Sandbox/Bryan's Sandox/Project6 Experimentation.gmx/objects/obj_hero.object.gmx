@@ -25,20 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//The best code ever!
+            <string>///Character movement
+//The best code ever!
 //This code is primarily used in basic character movement
 /// Initialize Variables
-grav = 0.2;
+grav = 0.1;
 hsp = 0; 
 vsp = 0;
 
-movespeed = 3;
-jumpspeed_normal = 6;
-jumpspeed_powerup = 10;
+movespeed = 2.5;
+jumpspeed_normal = 4;
+jumpspeed_powerup = 8;
 
 jumpspeed = jumpspeed_normal
-
-
 </string>
           </argument>
         </arguments>
@@ -87,7 +86,10 @@ sprite_index = spr_hero;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Get the player's input
+            <string>///Character Button layout and reaction to inputs plus collision
+
+
+//Get the player's input
 key_right = keyboard_check (vk_right);
 key_left = -keyboard_check (vk_left);
 key_jump = keyboard_check_pressed (vk_space);
@@ -102,7 +104,7 @@ if (place_meeting (x, y+2,obj_ground,))
     vsp = key_jump * -jumpspeed
 }
 
-if (place_meeting (x, y+2,obj_wall,))
+if (place_meeting (x, y+3,obj_wall,))
 {
     vsp = key_jump * -jumpspeed
 }
