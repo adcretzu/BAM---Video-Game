@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialize Variables
+            <string>///Initialize Variables
 
 dir = -1;
-movespeed = 3;
+movespeed = 1.5;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
+
+// Animation speed
+image_speed = 0.1;
 </string>
           </argument>
         </arguments>
@@ -54,7 +57,8 @@ vsp = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = dir * movespeed;
+            <string>///Enemy Movement
+hsp = dir * movespeed;
 vsp += grav;
 
 //Horizontal Collision
@@ -75,7 +79,6 @@ x += hsp;
 if(place_meeting(x+hsp,y,obj_wall))
 {
     while(!place_meeting(x+sign(hsp),y,obj_wall))
-// "!" means "not" in game making code
     {
         x += sign(hsp);
     }
@@ -173,7 +176,7 @@ if (place_meeting(x,y,obj_hero))
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>70,70</point>
+    <point>82,49</point>
+    <point>82,82</point>
   </PhysicsShapePoints>
 </object>
