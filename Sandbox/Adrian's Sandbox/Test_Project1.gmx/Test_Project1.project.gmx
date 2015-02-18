@@ -19,6 +19,7 @@
     <sprite>sprites\spr_mario_fall</sprite>
     <sprite>sprites\spr_soul</sprite>
     <sprite>sprites\spr_koopa1</sprite>
+    <sprite>sprites\spr_swing</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
